@@ -1,0 +1,10 @@
+<%
+  zones.sort_by{|k, _| k}.each do |owner, data|
+    Array(data["domains"]).sort.each do |domain|
+-%>
+// <%= owner %>
+<%= render_partial("templates/_slave_zone_partial.erb", {"domain" => domain, "options" => data["options"]}) -%>
+<%
+    end
+  end
+-%>

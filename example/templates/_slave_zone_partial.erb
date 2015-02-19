@@ -1,0 +1,12 @@
+zone "<%= domain %>" {
+  type slave;
+  file "/srv/named/zones/slave/<%= domain %>";
+<% unless Array(options["masterip"]).empty? -%>
+  masters {
+<%  Array(options["masterip"]).each do |ip| -%>
+    <%= ip %>;
+<%  end -%>
+  };
+<% end -%>
+};
+

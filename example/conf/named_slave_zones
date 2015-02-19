@@ -1,0 +1,18 @@
+// John Doe
+zone "example.com" {
+  type slave;
+  file "/srv/named/zones/slave/example.com";
+  masters {
+    192.0.2.10;
+  };
+};
+
+// John Doe
+zone "example.net" {
+  type slave;
+  file "/srv/named/zones/slave/example.net";
+  masters {
+    192.0.2.10;
+  };
+};
+

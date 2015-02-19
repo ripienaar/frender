@@ -1,0 +1,19 @@
+zone "<%= domain %>" {
+  type master;
+  file "/srv/named/zones/master/<%= domain %>";
+<% if !Array(options["alsonotify"]).empty? -%>
+  also-notify {
+<% Array(options["alsonotify"]).each do |alsonotify| -%>
+    <%= alsonotify %>;
+<% end -%>
+  };
+<% end -%>
+<% if !Array(options["allowtransfer"]).empty? -%>
+  allow-transfer {
+<% Array(options["allowtransfer"]).each do |allowtransfer| -%>
+    <%= allowtransfer %>;
+<% end -%>
+  };
+<% end -%>
+};
+

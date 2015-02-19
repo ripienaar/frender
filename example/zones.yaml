@@ -1,0 +1,15 @@
+:default_options: &defaults
+  zone_type:      domain
+  masterip:       192.0.2.10
+  alsonotify:
+    - 198.51.100.10
+    - 203.0.113.10
+  allowtransfer:  []
+
+zones:
+  John Doe:
+    options:
+      <<: *defaults
+    domains:
+      - example.com
+      - example.net

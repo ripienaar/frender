@@ -1,0 +1,20 @@
+// John Doe
+zone "example.com" {
+  type master;
+  file "/srv/named/zones/master/example.com";
+  also-notify {
+    198.51.100.10;
+    203.0.113.10;
+  };
+};
+
+// John Doe
+zone "example.net" {
+  type master;
+  file "/srv/named/zones/master/example.net";
+  also-notify {
+    198.51.100.10;
+    203.0.113.10;
+  };
+};
+

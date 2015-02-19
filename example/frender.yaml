@@ -1,0 +1,10 @@
+---
+:frender:
+  :yaml_scope: zones.yaml
+
+  :files:
+    "conf/named_slave_zones":
+      :template: "templates/slave_zones.erb"
+
+    "conf/named_master_zones":
+      :template: "templates/master_zones.erb"
