@@ -7,7 +7,7 @@ Gem::Specification::new do |spec|
   spec.version = Frender::VERSION
   spec.platform = Gem::Platform::RUBY
   spec.summary = "frender"
-  spec.description = "description: Renders config files from input data in YAML format using a variety of template languages"
+  spec.description = "Renders config files from input data in YAML format using a variety of template languages"
   spec.licenses = ["Apache-2"]
 
   spec.files = Dir["lib/**/*.rb", "bin/**/*", "Gemfile", "Gemfile.lock"]
@@ -19,6 +19,7 @@ Gem::Specification::new do |spec|
   spec.test_files = nil
 
   spec.bindir = 'bin'
+  spec.executables << 'frender'
 
   spec.add_dependency 'tilt', '~> 2.0'
   spec.add_dependency 'methadone', '~> 1.8'
