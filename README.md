@@ -65,6 +65,20 @@ Rendering file conf/named_master_zones using template templates/master_zones.erb
 
 You can override the scope being used using ```--scope```.
 
+Using as an API?
+----------------
+
+You can use it from another ruby library - though at present it will emit logs to
+STDOUT, will fix that soon.
+
+```ruby
+require 'rubygems'
+require 'frender'
+
+renderer = Frender::Renderer.new("buildsettings.yaml", {:stat => true})
+renderer.render!
+```
+
 Contact?
 ----
 

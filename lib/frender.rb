@@ -5,5 +5,4 @@ module Frender
   require 'frender/version'
   require 'frender/template_wrapper.rb'
   require 'frender/renderer'
-  require 'frender/cli'
 end

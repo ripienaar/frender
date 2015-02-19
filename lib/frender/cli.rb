@@ -15,7 +15,7 @@ module Frender
     use_log_level_option
 
     main do |spec|
-      Renderer.new(spec, options)
+      Renderer.new(spec, options).render!
     end
 
     go!

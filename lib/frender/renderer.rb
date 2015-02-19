@@ -8,7 +8,6 @@ module Frender
 
       load_spec
       load_scope
-      render!
     end
 
     def scope
@@ -33,6 +32,8 @@ module Frender
         c = "git diff --color --stat %s" % @spec[:files].map{|f,_| f}.join(" ")
         system(c)
       end
+
+      nil
     end
 
     def load_spec
