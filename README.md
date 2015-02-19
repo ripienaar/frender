@@ -34,13 +34,22 @@ what templates:
   :files:
     "conf/named_slave_zones":
       :template: "templates/slave_zones.erb"
+      :mode: 0777
 
     "conf/named_master_zones":
       :template: "templates/master_zones.erb"
+      :mode: 0644
 ```
 
 For the moment just one scope is supported, I guess it might make sense to support
-per file scopes and definitely per file mode settings.  The only scope type is yaml.
+per file scopes.  The only scope type is yaml.
+
+File modes have to be octal ie. ```0644``` which is also the default if nothing is specified.
+
+The render specification is deliberately in a hash called ```:frender:``` any other items in
+the file will be ignored.  This is to facilitate embed these render specifications in other
+data items without it being a problem.  I put my Docker build and deploy specifications in
+a single YAML file and these ```frender``` specifications live in the same YAML file.
 
 You need to create data and templates, see the ```example``` directory for full working
 examples.  Render them with:

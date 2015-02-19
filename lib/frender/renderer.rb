@@ -17,7 +17,15 @@ module Frender
 
     def render!
       @spec[:files].each do |file, options|
-        TemplateWrapper::render(options, scope, file)
+        mode = options.fetch(:mode, 0644)
+
+        info "Rendering %s with mode %o using template %s" % [file, mode, options[:template]]
+
+        File.open(file, "w") do |f|
+          f.puts TemplateWrapper::render(options, scope)
+        end
+
+        FileUtils.chmod mode, file
       end
 
       if @options[:stat]
